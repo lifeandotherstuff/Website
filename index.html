@@ -3,106 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily logs</title>
+    <title>Matteo Di Mario - Personal website</title>
     <style>
+        /* Basic styles for the page layout and typography */
         body {
             font-family: sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
             line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
             color: #333;
+            background-color: #f4f4f4;
+            margin-top: 0px;
         }
-        .post {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .post:last-child {
+
+        header {
+            text-align: center;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        header p {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #004499;
+        }
+
+        section {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        section:last-of-type {
             border-bottom: none;
         }
-        .post-date {
-            color: #777;
-            font-size: 0.9em;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .back-link {
+
+        section h2 {
             display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
+            padding-bottom: 0px;
+            margin-top: 0;
+            margin-bottom: 0px;
         }
-        .more-content {
-            display: none;
+
+        ul.publications {
+            list-style-type: disc;
+            padding-left: 20px;
         }
-        .read-more-link {
-            cursor: pointer;
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
+
+        ul.publications li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- Back to Home Link -->
-        <a href="../index.html" class="back-link">← Back</a>
+        <header>
+            <h1>Matteo Di Mario</h1>
+        </header>
 
-        <h1>Welcome to daily logs!</h1>
-        <p>I try to share my favourite learning of the week each week. 
-        Some days it will be a thought, some days it will be an app, an article, or a video, a conversation,
-        and other days it will be a joke (no promises it will be funny).</p>
-        <p>In addition, at the end of each post, I add the Notion pages for that week.</p>
-        
-        <!-- Blog Post 1 -->
-        <article class="post">
-            <h2>What this will be</h2>
-            <p class="post-date">Published on: September 22, 2025</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <h2>About</h2>
             <p>
-                Hello world!
-                This is a test post. My learning of the day is to be consistent: 
-                <a href="https://www.youtube.com/watch?v=65nfbW-27ps">AGE 12 TO MARRIED – I Took A Photo Every Day - YouTube</a>. I always wish I started something sooner. But then I rarely do.
-                <span class="more-content" id="moreContent">
-                    So this is one such attempt. I was fascinated by the commitment to take a picture every single day for such a long part of life.
-                    It takes so much vision, discipline and commitment. My dream would be to be 1/7 as consistent as him.
-                    Only time will tell. For now 1/1.
-                    There are still a lot of things I want to figure out about this, but for now see you in around seven days.
-                </span>
+                Welcome! My name is Matteo. I currently work as an analyst at an economic consulting firm.<br>
+                I have a B.S. in Mathematics and a B.S. in Data Science from the University of Michigan.<br>
+                You can find here my projects, interests, and contact information.
+                You can find me resume <a href="https://www.notion.so/matteodimario/Resume-1a9ac9b10dc18059b4ecc5dfea77fe7a?source=copy_link">here</a>
             </p>
-            <a id="readMoreLink" class="read-more-link">Read more</a>
-        </article>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <!-- Remember to add the slash once you put online -->
+            <p><a href="weekly_logs/index.html">Weekly logs</a></p>
+            <!--  Problems section where I share weekly the problem I have solved (leetcode, Euler project, etc.)
+            <p><a href="Problems/index.html">Problems</a></p>
+            -->
+            <!-- Blog when it is ready
+            <p><a href="/blog/index.html">(Occasional) Blog</a></p>
+            -->
+        </section>
+
+        <section id="interests">
+            <h2>Interests</h2>
+            <ul>
+                <li>Languages: at the moment, at Italian, English, French, and Spanish. Next endevour yet to be decided. (Reach out if you want to speak in any of them with me :)</li>
+                <li>Math: many parts, but especially math foundations, linear algebra, and probability.</li>
+                <li>CS: almost everything. I just really like coding.</li>
+                <li>Health & fitness: currently working to regain the muscle-up (after having lost it for the second time).</li>
+                <li>Second brain: I live by <a href="https://www.notion.so">Notion</a>, and gladly try to spread the gospel. 
+                    I am not going to say it 10x my productivity, in fact I think it decreased mine. 
+                    But I just think it is super cool and satisfying to use.
+                    Reach out and I will try to convince you of how uselessly cool it is. 
+                    If you are curious you can find my set-up <a href="https://www.getgraphify.com/shared/zttYOkIqJl?theme=light">here</a> in graph mode (thnaks to <a href="https://www.getgraphify.com/graph">Graphiphy</a>).
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at:</p>
+            <ul>
+                <li>Email: mttdimario@gmail.com</li>
+                <li><a href="https://www.linkedin.com/in/matteo-di-mario-511a09182/">LinkedIn</a></li>
+            </ul>
+            <img src="Grad_photo_zoom_in.JPG" width="225" height="200">
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Matteo Di Mario. All rights reserved.</p>
+        </footer>
     </div>
-
-    <script>
-        const readMoreLink = document.getElementById('readMoreLink');
-        const moreContent = document.getElementById('moreContent');
-
-        readMoreLink.addEventListener('click', function(event) {
-            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
-                moreContent.style.display = 'inline';
-                readMoreLink.textContent = 'Read less';
-            } else {
-                moreContent.style.display = 'none';
-                readMoreLink.textContent = 'Read more';
-            }
-        });
-    </script>
-
 </body>
 </html>
