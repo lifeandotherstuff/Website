@@ -12,104 +12,240 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily logs</title>
+    <title>Weekly logs</title>
     <style>
+        /* Basic styles for the page layout and typography */
+        @media (max-width: 600px) {
+            /* Adjust container padding for edge-to-edge look */
+            .container {
+                padding: 10px;
+                margin: 10px auto; /* Slightly less margin on mobile */
+            }
+
+            /* Make the navigation list items stack vertically */
+            nav ul {
+                text-align: left; /* Optional: Align text left for stacked list */
+            }
+
+            nav ul li {
+                /* Change from horizontal (inline-block) to full-width vertical (block) */
+                display: block; 
+                margin: 5px 0; /* Add vertical spacing */
+                border-bottom: 1px solid #eee; /* Visual separator */
+            }
+
+            nav ul li:last-child {
+                border-bottom: none; /* Remove separator on the last item */
+            }
+            
+            nav a {
+                /* Make the links larger and easier to tap */
+                display: block;
+                padding: 10px 0;
+            }
+        }
+
         body {
             font-family: sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
             line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
             color: #333;
+            background-color: #f4f4f4;
+            margin-top: 0px;
         }
-        .post {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .post:last-child {
+
+        header {
+            text-align: center;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        header p {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #004499;
+        }
+
+        section {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        section:last-of-type {
             border-bottom: none;
         }
-        .post-date {
-            color: #777;
+
+        section h2 {
+            display: inline-block;
+            padding-bottom: 0px;
+            margin-top: 0;
+            margin-bottom: 0px;
+        }
+
+        ul.publications {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul.publications li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
             font-size: 0.9em;
         }
-        a {
-            color: #007BFF;
-            text-decoration: none;
+
+        .more-content-body {
+            display: none; /* Content is hidden when the page loads */
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .more-content {
-            display: none;
-        }
-        .read-more-link {
+
+        /* Updated style for the button to use the new class name */
+        .read-more-toggle { 
             cursor: pointer;
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
+            color: #0066cc;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Optional: Clean up the date tag */
+        .post-date {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
+    <header>
+            <h1>Matteo Di Mario</h1>
+        </header>
 
+        <nav>
+            <ul>
+                <li><a href="../index.html#about" class="back-link">About</a></li>
+                <li><a href="../index.html#projects" class="back-link">Projects</a></li>
+                <li><a href="../index.html#interests" class="back-link">Interests</a></li>
+                <li><a href="../index.html#conctacts" class="back-link">Contacts</a></li>
+            </ul>
+        </nav>
     <div class="container">
         <!-- Back to Home Link -->
-        <a href="../index.html" class="back-link">← Back</a>
+        <a href="../index.html" class="back-link">← Go back</a>
 
-        <h1>Welcome to daily logs!</h1>
-        <p>I try to share my favourite learning of the week each week. 
-        Some days it will be a thought, some days it will be an app, an article, or a video, a conversation,
-        and other days it will be a joke (no promises it will be funny).</p>
-        <p>In addition, at the end of each post, I add the Notion pages for that week.</p>
+        <h1>Welcome to the Weekly logs!</h1>
+        <p>I try to share here my favourite learning of the week each week.<br>
+        Some weeks it will be a video, other weeks it will be an app, an article, a book, a podcast, or a conversation,
+        and other weeks it will be a joke (no promises it will be funny).</p>
+        <!-- <p>If you want to explore further about my week you can see my Notion pages of the week</p> -->
         
-        <!-- Blog Post 1 -->
+        <!-- Blog Post 2 -->
         <article class="post">
-            <h2>What this will be</h2>
-            <p class="post-date">Published on: September 22, 2025</p>
+            <h2>More rational than it sounds</h2>
+            <p class="post-date">September 29, 2025</p>
             <p>
                 Hello world!
-                This is a test post. My learning of the day is to be consistent: 
-                <a href="https://www.youtube.com/watch?v=65nfbW-27ps">AGE 12 TO MARRIED – I Took A Photo Every Day - YouTube</a>. I always wish I started something sooner. But then I rarely do.
-                <span class="more-content" id="moreContent">
-                    So this is one such attempt. I was fascinated by the commitment to take a picture every single day for such a long part of life.
-                    It takes so much vision, discipline and commitment. My dream would be to be 1/7 as consistent as him.
-                    Only time will tell. For now 1/1.
-                    There are still a lot of things I want to figure out about this, but for now see you in around seven days.
+                This is the post after my previous test post. This week I four resources in one:
+                <a href="https://rationalreminder.ca/podcast/257" target="_blank">Episode 257: Giorgio Ugazio (Mr. RIP): Life Design, In Progress</a>.
+                
+                <span class="more-content-body"> 
+                    At this link you can find a great combinations: one of my favourite podcasts (Rational Reminder), 
+                    with one of my favourite youtubers (<a href="https://www.youtube.com/@mr_rip" targe="_blank">Mr. RIP</a>), with a great book recommendation (Designing Your Life by Bill Burnett and Dave Evans), 
+                    and a great website recommendation (<a href="https://philosofer123.wordpress.com/" target="_blank">Philosofer123</a>).<br>
+                    It's a little bit about a little bit about financial philosophy, a little bit about life design, and a little bit about finding the path (not in some guru way).<br>
+                    I don't think I have a great takeaway other than that the best conversations to listen to are not always the most insightful ones,
+                    but those where you can feel the passion of the people talking. Sometimes I look for podcasts that make me go "I learned a lot", Sometimes
+                    I look for something that just makes me go "That was just a great conversation". This was one of those (and among the best of its kind).
                 </span>
             </p>
-            <a id="readMoreLink" class="read-more-link">Read more</a>
+            <a class="read-more-toggle">Read more</a> 
+        </article>
+
+        <article class="post">
+            <h2>What this will be</h2>
+            <p class="post-date">September 22, 2025</p> 
+            <p>
+                Hello world!
+                This is my first test post. My learning of the day is to be consistent: 
+                <a href="https://www.youtube.com/watch?v=65nfbW-27ps" target="_blank">AGE 12 TO MARRIED – I Took A Photo Every Day - YouTube</a>.
+                
+                <span class="more-content-body">
+                    When I watched the video I was so fascinated by the commitment to take a picture every single day for such a long part of life.
+                    It takes so much vision, discipline and commitment. My dream would be to be 1/7 as consistent as him.<br>
+                    I always wish I started something sooner. But then I rarely do. So this is one such attempt.
+                    Only time will tell. For now 1/1.<br>
+                    There are still a lot of things I want to figure out about this, but for now see you in around seven days (if anyone is reading this).
+                </span>
+            </p>
+            <a class="read-more-toggle">Read more</a> 
         </article>
     </div>
 
     <script>
-        const readMoreLink = document.getElementById('readMoreLink');
-        const moreContent = document.getElementById('moreContent');
+        // Get all elements with the class for the 'Read more' link
+        const readMoreToggles = document.querySelectorAll('.read-more-toggle');
 
-        readMoreLink.addEventListener('click', function(event) {
-            if (moreContent.style.display === 'none' || moreContent.style.display === '') {
-                moreContent.style.display = 'inline';
-                readMoreLink.textContent = 'Read less';
-            } else {
-                moreContent.style.display = 'none';
-                readMoreLink.textContent = 'Read more';
-            }
+        // Loop through each toggle button
+        readMoreToggles.forEach(readMoreLink => {
+            // Find the specific article this button belongs to
+            const article = readMoreLink.closest('.post');
+            
+            // Find the corresponding collapsible content within that article
+            const moreContent = article.querySelector('.more-content-body');
+
+            // Apply the event listener
+            readMoreLink.addEventListener('click', function() {
+                if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+                    // Show content
+                    moreContent.style.display = 'inline';
+                    readMoreLink.textContent = 'Read less';
+                } else {
+                    // Hide content
+                    moreContent.style.display = 'none';
+                    readMoreLink.textContent = 'Read more';
+                }
+            });
         });
     </script>
 
