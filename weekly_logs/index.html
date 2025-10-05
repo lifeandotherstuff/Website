@@ -120,6 +120,12 @@
             margin-bottom: 0px;
         }
 
+        /* Ensure post titles don't add extra bottom margin */
+        .post h2 {
+            margin: 0 0 4px 0; /* small gap below title */
+            line-height: 1.15;
+        }
+
         ul.publications {
             list-style-type: disc;
             padding-left: 20px;
@@ -146,14 +152,34 @@
             color: #0066cc;
             text-decoration: underline;
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 0px; /* keep toggle close to the content */
         }
 
         /* Optional: Clean up the date tag */
         .post-date {
-            margin-top: 0;
-            margin-bottom: 5px;
+            margin-top: 0px; /* tightened space above the date */
+            margin-bottom: 0px; /* tightened space below the date */
             font-style: italic;
+            display: block;
+            line-height: 1.1;
+        }
+
+        /* Target the main paragraph within the post to reduce space below the date/above the content */
+        .post p:not(.post-date) {
+            margin-top: 0px; /* remove extra space above the main content to tighten up */
+            margin-bottom: 4px; /* smaller space before the read-more link so button is closer */
+        }
+
+        /* Preserve space between posts by targeting the article element */
+        .post {
+            margin-bottom: 40px; /* increased gap between posts (space after Read more before next title) */
+            padding-bottom: 0; /* no extra padding needed */
+            border-bottom: none; /* remove dotted divider */
+        }
+        /* Last post shouldn't have extra bottom spacing */
+        .post:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
     </style>
 </head>
@@ -179,42 +205,66 @@
         Some weeks it will be a video, other weeks it will be an app, an article, a book, a podcast, or a conversation,
         and other weeks it will be a joke (no promises it will be funny).</p>
         <!-- <p>If you want to explore further about my week you can see my Notion pages of the week</p> -->
-        
+
+        <!-- Blog Post 3 -->
+         <article class="post">
+            <h2>Learning to learn</h2>
+            <p class="post-date">October 4, 2025</p>
+            <p>
+                Hello world! This is the post after my last post. 
+                My learning of the week is to always reinvent yourself: <a href="https://fs.blog/learning-how-to-learn/" target="_blank">AOL</a>
+                <span class="more-content-body"> 
+                If you were born before the 2000s, it is likely you remember AOL.
+                AOL (America Online) boomed in the 1990s and was the gateway to the internet for many people.
+                However, I was born in the 2000s and I had never even hear of AOL until a month ago when 
+                I read <a href="https://www.amazon.com/How-Internet-Happened-Netscape-iPhone/dp/1982573619" target="_blank">How the Internet Happened</a> 
+                by Brian McCullough. And then this week I was listening to <a href="https://tboypod.com/" target="_blank">The Best One Yet Podcast</a> and I heard AOL grew by 20% this year.
+                I was so fascinated by this that I started to read more about it and I found out that AOL is now a completely different company than the one of the 1990s.
+                I started going around AOL and I found out that it is now a media company that owns a lot of different websites.
+                I could not quite figure out exactly what it was. Is it a news website? A blog? A social media? A forum? I still don't think I know.
+                But that's ok. I think I came to the conclusion that it doesn't matter. 
+                Just keep reinventing yourself and trying to find new ways to be useful, even if these are just a big mix of incoherent things.
+                </span>
+            </p>
+            <a class="read-more-toggle">Read more</a>
+        </article>
+
         <!-- Blog Post 2 -->
         <article class="post">
             <h2>More rational than it sounds</h2>
             <p class="post-date">September 29, 2025</p>
             <p>
                 Hello world!
-                This is the post after my previous test post. This week I four resources in one:
+                This is the post after my previous test post. My learning of the week is to design my life:
                 <a href="https://rationalreminder.ca/podcast/257" target="_blank">Episode 257: Giorgio Ugazio (Mr. RIP): Life Design, In Progress</a>.
                 
                 <span class="more-content-body"> 
-                    At this link you can find a great combinations: one of my favourite podcasts (Rational Reminder), 
+                    At this link you can find a great combination: one of my favourite podcasts (Rational Reminder), 
                     with one of my favourite youtubers (<a href="https://www.youtube.com/@mr_rip" targe="_blank">Mr. RIP</a>), with a great book recommendation (Designing Your Life by Bill Burnett and Dave Evans), 
                     and a great website recommendation (<a href="https://philosofer123.wordpress.com/" target="_blank">Philosofer123</a>).<br>
-                    It's a little bit about a little bit about financial philosophy, a little bit about life design, and a little bit about finding the path (not in some guru way).<br>
+                    It's a little bit about financial philosophy, a little bit about life design, and a little bit about finding the path (not in some guru way).<br>
                     I don't think I have a great takeaway other than that the best conversations to listen to are not always the most insightful ones,
                     but those where you can feel the passion of the people talking. Sometimes I look for podcasts that make me go "I learned a lot", Sometimes
-                    I look for something that just makes me go "That was just a great conversation". This was one of those (and among the best of its kind).
+                    I look for something that just makes me go "That was just a great conversation". This was one of the latter (and among the best of its kind).<br>
+                    I am sorry for those that do not know Italian and will not be able to enjoy Mr. RIP's great content...
                 </span>
             </p>
             <a class="read-more-toggle">Read more</a> 
         </article>
 
+        <!-- Blog Post 1 -->
         <article class="post">
             <h2>What this will be</h2>
             <p class="post-date">September 22, 2025</p> 
             <p>
                 Hello world!
-                This is my first test post. My learning of the day is to be consistent: 
+                This is my first test post. My learning of the week is to be consistent: 
                 <a href="https://www.youtube.com/watch?v=65nfbW-27ps" target="_blank">AGE 12 TO MARRIED – I Took A Photo Every Day - YouTube</a>.
                 
                 <span class="more-content-body">
                     When I watched the video I was so fascinated by the commitment to take a picture every single day for such a long part of life.
                     It takes so much vision, discipline and commitment. My dream would be to be 1/7 as consistent as him.<br>
-                    I always wish I started something sooner. But then I rarely do. So this is one such attempt.
-                    Only time will tell. For now 1/1.<br>
+                    I always wish I started something sooner. But then I rarely do. So this is one such attempt.<br>
                     There are still a lot of things I want to figure out about this, but for now see you in around seven days (if anyone is reading this).
                 </span>
             </p>

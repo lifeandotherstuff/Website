@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXN39MKZYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PXN39MKZYW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly logs</title>
+    <style>
+        /* Basic styles for the page layout and typography */
+        @media (max-width: 600px) {
+            /* Adjust container padding for edge-to-edge look */
+            .container {
+                padding: 10px;
+                margin: 10px auto; /* Slightly less margin on mobile */
+            }
+
+            /* Make the navigation list items stack vertically */
+            nav ul {
+                text-align: left; /* Optional: Align text left for stacked list */
+            }
+
+            nav ul li {
+                /* Change from horizontal (inline-block) to full-width vertical (block) */
+                display: block; 
+                margin: 5px 0; /* Add vertical spacing */
+                border-bottom: 1px solid #eee; /* Visual separator */
+            }
+
+            nav ul li:last-child {
+                border-bottom: none; /* Remove separator on the last item */
+            }
+            
+            nav a {
+                /* Make the links larger and easier to tap */
+                display: block;
+                padding: 10px 0;
+            }
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin-top: 0px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        header p {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #004499;
+        }
+
+        section {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section h2 {
+            display: inline-block;
+            padding-bottom: 0px;
+            margin-top: 0;
+            margin-bottom: 0px;
+        }
+
+        /* Ensure post titles don't add extra bottom margin */
+        .post h2 {
+            margin: 0 0 4px 0; /* small gap below title */
+            line-height: 1.15;
+        }
+
+        ul.publications {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul.publications li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .more-content-body {
+            display: none; /* Content is hidden when the page loads */
+        }
+
+        /* Updated style for the button to use the new class name */
+        .read-more-toggle { 
+            cursor: pointer;
+            color: #0066cc;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 0px; /* keep toggle close to the content */
+        }
+
+        /* Optional: Clean up the date tag */
+        .post-date {
+            margin-top: 0px; /* tightened space above the date */
+            margin-bottom: 0px; /* tightened space below the date */
+            font-style: italic;
+            display: block;
+            line-height: 1.1;
+        }
+
+        /* Target the main paragraph within the post to reduce space below the date/above the content */
+        .post p:not(.post-date) {
+            margin-top: 0px; /* remove extra space above the main content to tighten up */
+            margin-bottom: 4px; /* smaller space before the read-more link so button is closer */
+        }
+
+        /* Preserve space between posts by targeting the article element */
+        .post {
+            margin-bottom: 40px; /* increased gap between posts (space after Read more before next title) */
+            padding-bottom: 0; /* no extra padding needed */
+            border-bottom: none; /* remove dotted divider */
+        }
+        /* Last post shouldn't have extra bottom spacing */
+        .post:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <h1>Matteo Di Mario</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html#about" class="back-link">About</a></li>
+                <li><a href="../index.html#projects" class="back-link">Projects</a></li>
+                <li><a href="../index.html#interests" class="back-link">Interests</a></li>
+                <li><a href="../index.html#conctacts" class="back-link">Contacts</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <!-- Back to Home Link -->
+        <a href="../index.html" class="back-link">← Go back</a>
+
+        <h1>Welcome to My Notion second brain!</h1>
+        <p>This is by far my favourite page. I live my life by <a href="notion.so">Notion</a>.
+            I use it for most of my things in life, including cooking, projects, goals, and deciding when shaving among many more. 
+            So if you see me with a beard, it is likely because it was not on my Notion to-do. Nonetheless, I cannot confidently say it improved my productivity.
+            In fact, it might have made it worse, as I spend a lot of time taking care of Notion itself. 
+            However, I came to the realization that I don't love Notion because it makes me more productive, I love Notion because it keeps my life together.
+            Life is an unprdictable, messy, and complicated. But when I open Notion, I know I am staring at a clean version of my life. And that makes me undescribably happy.
+            So this space is my attempt to have a conversation about long-lasting digital second brains. Made to outlast us, and to survive.
+            As life grows, our second brain should grow with it.
+        </p>
+        <p>This is my Notion <a href="https://www.getgraphify.com/shared/zttYOkIqJl?theme=light" target="_blank">set-up</a> in graph mode (thanks to <a href="https://www.getgraphify.com/graph" target="_blank">Graphiphy</a>).
+        If you would like to access any of the pages feel free to reach out.</li></p>
+
+</body>
+</html>
