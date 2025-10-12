@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXN39MKZYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PXN39MKZYW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital second brain</title>
+    <style>
+        /* --- TOGGLE/DROPDOWN STYLES (CRITICAL) --- */
+        .list-details {
+            padding-left: 45px; /* Indent details to align with the header */
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+            opacity: 1;
+            overflow: hidden;
+        }
+
+        .collapsible.closed {
+            max-height: 0; /* Hide the content */
+            opacity: 0;
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Restore the nested list styling for the toggled content */
+        .list-details ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+        /* Basic styles for the page layout and typography */
+        @media (max-width: 600px) {
+            /* Adjust container padding for edge-to-edge look */
+            .container {
+                padding: 10px;
+                margin: 10px auto; /* Slightly less margin on mobile */
+            }
+
+            /* Make the navigation list items stack vertically */
+            nav ul {
+                text-align: left; /* Optional: Align text left for stacked list */
+            }
+
+            nav ul li {
+                /* Change from horizontal (inline-block) to full-width vertical (block) */
+                display: block; 
+                margin: 5px 0; /* Add vertical spacing */
+                border-bottom: 1px solid #eee; /* Visual separator */
+            }
+
+            nav ul li:last-child {
+                border-bottom: none; /* Remove separator on the last item */
+            }
+            
+            nav a {
+                /* Make the links larger and easier to tap */
+                display: block;
+                padding: 10px 0;
+            }
+        }
+
+                /* Remove bullets and left padding from toggle list */
+        .drop-line-list {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        /* Optional: add slight spacing between sections for readability */
+        .drop-line-list > li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 8px;
+        }
+
+        .drop-line-list > li:last-child {
+            border-bottom: none;
+        }
+
+        /* Make the clickable headers look clean and interactive */
+        .list-header {
+            cursor: pointer;
+            font-weight: bold;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Add arrow indicator for open/closed state */
+        .list-header::before {
+            content: "▸";
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .list-header.open::before {
+            transform: rotate(90deg);
+        }
+
+
+        body {
+            font-family: georgia;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin-top: 0px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        header p {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #004499;
+        }
+
+        section {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section h2 {
+            display: inline-block;
+            padding-bottom: 0px;
+            margin-top: 0;
+            margin-bottom: 0px;
+        }
+
+        /* Ensure post titles don't add extra bottom margin */
+        .post h2 {
+            margin: 0 0 4px 0; /* small gap below title */
+            line-height: 1.15;
+        }
+
+        ul.publications {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul.publications li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .more-content-body {
+            display: none; /* Content is hidden when the page loads */
+        }
+
+        /* Updated style for the button to use the new class name */
+        .read-more-toggle { 
+            cursor: pointer;
+            color: #0066cc;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 0px; /* keep toggle close to the content */
+        }
+
+        /* Optional: Clean up the date tag */
+        .post-date {
+            margin-top: 0px; /* tightened space above the date */
+            margin-bottom: 0px; /* tightened space below the date */
+            font-style: italic;
+            display: block;
+            line-height: 1.1;
+        }
+
+        /* Target the main paragraph within the post to reduce space below the date/above the content */
+        .post p:not(.post-date) {
+            margin-top: 0px; /* remove extra space above the main content to tighten up */
+            margin-bottom: 4px; /* smaller space before the read-more link so button is closer */
+        }
+
+        /* Preserve space between posts by targeting the article element */
+        .post {
+            margin-bottom: 40px; /* increased gap between posts (space after Read more before next title) */
+            padding-bottom: 0; /* no extra padding needed */
+            border-bottom: none; /* remove dotted divider */
+        }
+        /* Last post shouldn't have extra bottom spacing */
+        .post:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<script>
+    function toggleDetails(header) {
+        const details = header.nextElementSibling;
+        const isClosed = details.classList.toggle("closed");
+        header.classList.toggle("open", !isClosed);
+    }
+</script>
+<body>
+    <header>
+        <h1>Life and other stuff</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Welcome!</a></li>
+            <li><a href="../logs/index.html">Logs</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../lifeos/index.html">Life OS</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Back to Home Link -->
+        <a href="../index.html" class="back-link">← Go back</a>
+
+        <h1>Life OS</h1>
+        <p>
+            Here I try to share a little bit about my life, my systems, my resources, and some more stuff.
+        </p>
+        <ul class="drop-line-list">
+    <li>
+        <div class="list-header" onclick="toggleDetails(this)">
+            <p class="list-title">My digital second brain set-up</p>
+        </div>
+        <div class="list-details collapsible closed"> 
+            <p>
+                My second brain comes in many forms. One day I hope it will come as one centralized place, but for now:
+            <ul>
+                <li>1. This website. This is where some highlights or refined thoughts go</li>
+                <li>2. My Notion. This is where a lot of the stuff goes. If you are curious about the overall structure you can see the 
+                    <a href="https://www.getgraphify.com/shared/zttYOkIqJl?theme=light" target="_blank">set-up</a> in graph mode 
+                    (thanks to <a href="https://www.getgraphify.com/graph" target="_blank">Graphiphy</a>).
+                    If you would like to access any of the pages feel free to reach out. 
+                    If you are curious to learn more about my pages set-up I will have more info soon.
+                </li>
+                <li>3. Some more places that are too hard to connect to the rest of my second brain.</li>
+            </ul>
+            </p>
+        </div>
+    </li>
+    <li>
+        <div class="list-header" onclick="toggleDetails(this)">
+            <p class="list-title">My philosophy</p>
+        </div>
+        <div class="list-details collapsible closed"> 
+            <p>
+            </p>
+        </div>
+    </li>
+    <li>
+        <div class="list-header" onclick="toggleDetails(this)">
+            <p class="list-title">More about me</p>
+        </div>
+        <div class="list-details collapsible closed"> 
+            <p>
+            </p>
+        </div>
+    </li>
+    <li>
+        <div class="list-header" onclick="toggleDetails(this)">
+            <p class="list-title">My resources</p>
+        </div>
+        <div class="list-details collapsible closed"> 
+            <p>
+            </p>
+        </div>
+    </li>
+
+    <li>
+        <div class="list-header" onclick="toggleDetails(this)">
+            <p class="list-title">Interests</p>
+        </div>
+        <div class="list-details collapsible closed">
+            <ul>
+                <li>Math: many parts, but especially linear algebra, probability, and 
+                <a href="https://www.instagram.com/p/C7nE_BbPufF/">set theory.</a></li>
+                <li>CS: almost everything. I just really like coding.</li>
+                <li>Languages: learning new languages and exploring the related cultures.  
+                    For now: Italian, English, French, and Spanish.</li>
+                <li>Health & fitness: currently working to regain the muscle-up (after having lost it for the second time).</li>
+                <li>History: especially modern history, the history of technology, science, and innovation.</li>
+                <li>Personal finance: philosophy of FIRE, and experimenting with asset allocations — exclusively with ETFs of course.</li>
+            </ul>
+            </p>
+        </div>
+    </li>
+</body>
+</html>
