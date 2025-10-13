@@ -1,0 +1,9 @@
+title: Life and other stuff
+email: you@example.com
+description: "Personal blog"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
