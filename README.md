@@ -28,11 +28,13 @@ This site includes the Utterances script in `_layouts/post.html`. To enable comm
 2. Go to https://utteranc.es/ and authorize the app for that repo and choose a mapping (e.g., pathname or title).
 3. Replace `repo="YOUR_GITHUB_USERNAME/YOUR_UTTERANCES_REPO"` in `_layouts/post.html` with your repo name.
 
-Example: if your GitHub repo is `matteodimario10/utterances-comments`, change the script tag to:
+Example: for this site the GitHub repo is `lifeandotherstuff/Website` and the published URL is `https://lifeandotherstuff.com`.
+
+If you use the repo `lifeandotherstuff/Website`, the script tag should look like:
 
 ```html
 <script src="https://utteranc.es/client.js"
-	repo="matteodimario10/utterances-comments"
+	repo="lifeandotherstuff/Website"
 	issue-term="pathname"
 	theme="github-light"
 	crossorigin="anonymous"

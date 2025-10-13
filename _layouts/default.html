@@ -155,8 +155,10 @@
         {{ content }}
     </main>
 
+    {% unless page.hide_footer %}
     <footer>
-        <p>© {{ site.time | date: '%Y' }} — {{ site.title }}</p>
+        <p>Inspiration:</p>
     </footer>
+    {% endunless %}
 </body>
 </html>
