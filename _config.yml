@@ -2,7 +2,8 @@ title: Life and other stuff
 email: you@example.com
 description: "Personal blog"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+# Set your published site URL (used for feeds, canonical links, sitemaps)
+url: "https://lifeandotherstuff.com"
 theme: minima
 markdown: kramdown
 plugins:
